@@ -1,0 +1,30 @@
+.button {
+    background-color: #4CAF50;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+h1 {
+    margin-left: 20px;
+    /* display: inline-block; */
+}
+
+.green {
+    color: green;
+}
+
+p {
+    display: inline-block;
+}
+
+.image {
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+}

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="i1">
+        <h1>Add Class</h1>
+        <button class=button>Add Class</button>
+        <p>Click on the button to add class 'green' to this header</p>
+        <hr>
+    </div>
+
+    <div id="i2">
+        <h1 id="append">Append</h1>
+        <button class=button>Append</button>
+        <p>Click on the button to append hello world after the title</p>
+        <hr>
+    </div>
+
+    <div id="i3">
+        <h1>After</h1>
+        <button class=button>After</button>
+        <p>Click on the button add the bolded words "hello" after this paragraph</p>
+        <hr>
+    </div>
+
+    <div id="i4">
+        <h1>Attr</h1>
+        <button class=button>Attribute</button> Can grab data from an attribute:
+        <img class="image" src="dojocat.jpg" alt="hidden ninja cat">
+        <p></p>
+        <hr>
+    </div>
+
+    <div id="i5">
+        <h1>Before</h1>
+        <button class=button>Before</button>
+        <p>Click on the button add the bolded words "hello" before this paragraph</p>
+        <hr>
+    </div>
+
+
+    <div id="i6">
+        <h1>Data</h1>
+        <button class=button>Data</button>
+        <p>My favorite secret food is: <span></span>.</p>
+        <hr>
+    </div>
+
+    <div id="i7">
+        <h1>fadeIn</h1>
+        <button class=button>fadeIn</button>
+        <p> fades an image in </p>
+        <img class="image" src="dojocat.jpg" style="display:none;" alt="hidden ninja cat">
+        <hr>
+    </div>
+
+    <div id="i8">
+        <h1>fadeOut</h1>
+        <button class=button>fadeOut</button>
+        <p> fades an image out </p>
+        <img class="image" src="dojocat.jpg" alt="ninja cat">
+        <hr>
+    </div>
+
+    <div id="i9">
+        <h1>hide</h1>
+        <button class=button>hide</button>
+        <p> hides an image </p>
+        <img class="image" src="dojocat.jpg" alt="ninja cat">
+        <hr>
+    </div>
+
+    <div id="i10">
+        <h1>html</h1>
+        <button class=button>html</button>
+        <p> Let's add some words around this text</p>
+        <hr>
+    </div>
+
+    <div id="i11">
+        <h1>show</h1>
+        <button class=button>show</button>
+        <p> will show a hidden image</p>
+        <img class="image" src="dojocat.jpg" alt="ninja cat" style="display:none">
+        <hr>
+    </div>
+
+    <div id="i12">
+        <h1>slideDown</h1>
+        <button class=button>slideDown</button>
+        <p> will show a hidden image, scrolling down</p>
+        <img class="image" src="dojocat.jpg" alt="ninja cat" style="display:none">
+        <hr>
+    </div>
+
+    <div id="i13">
+        <h1>slideUp</h1>
+        <button class=button>slideUp</button>
+        <p> will show a hidden image, scrolling up</p>
+        <img class="image" src="dojocat.jpg" alt="ninja cat">
+        <hr>
+    </div>
+
+    <div id="i14">
+        <h1>slideToggle</h1>
+        <button class=button>slideToggle</button>
+        <p>slide toggle showing an image</p>
+        <img class="image" src="dojocat.jpg" alt="ninja cat">
+        <hr>
+    </div>
+
+    <div id="i15">
+        <h1>Toggle</h1>
+        <button class=button>Toggle</button>
+        <p>toggle showing an image</p>
+        <img class="image" src="dojocat.jpg" alt="ninja cat">
+        <hr>
+    </div>
+
+    <div id="i16">
+        <h1>Text</h1>
+        <button class=button>Text</button>
+        <p>Adds random text as is into this p tag</p>
+        <hr>
+    </div>
+
+
+    <div id="i17">
+        <h1>val</h1>
+        <p>changes the value of an input</p>
+        <button>Feed</button>
+        <button>the</button>
+        <button>Input</button>
+        <input type="text" value="click a button">
+    </div>
+
+    <!-- jquery script below here -->
+    <script>
+        $('#i1 button').click(function() {
+            $('#i1 h1').addClass("green");
+        });
+
+        $('#i2 button').click(function() {
+            $('#i2 h1').append("<h4>hello world</h4>");
+        });
+
+        $('#i3 button').click(function() {
+            $('#i3 p').after('<b>hello</b>');
+        });
+
+        $('#i4 button').click(function() {
+            $('#i4 p').text($('img').attr("alt"));
+        });
+
+        $('#i5 button').click(function() {
+            $('#i5 p').before('<p><b>Hello</b></p>');
+        });
+
+        $('#i6 button').click(function() {
+            $("#i6 p").data("test", {
+                food: "hu tieu nam vang",
+            });
+            $("span:first").text($("#i6 p").data("test").food);
+        });
+
+        $('#i7 button').click(function() {
+            $('#i7 img').fadeIn("slow", function() {});
+        });
+
+        $('#i8 button').click(function() {
+            $('#i8 img').fadeOut("slow", function() {});
+        });
+
+        $('#i9 button').click(function() {
+            $('#i9 img').hide();
+        });
+
+        $('#i10 button').click(function() {
+            $('#i10 p').html('Replacing these words at the p tag');
+        });
+
+        $('#i11 button').click(function() {
+            $('#i11 img').show();
+        });
+
+        $('#i12 button').click(function() {
+            $('#i12 img').slideDown("slow", function() {});
+        });
+
+        $('#i13 button').click(function() {
+            $('#i13 img').slideUp("slow", function() {});
+        });
+
+        $('#i14 button').click(function() {
+            $('#i14 img').slideToggle("slow", function() {});
+        });
+
+        $('#i15 button').click(function() {
+            $('#i15 img').toggle("slow", function() {});
+        });
+
+        $('#i16 button').click(function() {
+            $('#i16 p').text("<b>putting text into here as is</b>");
+        });
+
+        $("#i17 button").click(function() {
+            var text = $(this).text();
+            $("#i17 input").val(text);
+        });
+    </script>
+</body>
+
+</html>
